@@ -1,7 +1,7 @@
 # kindness.py
 
 from datetime import datetime
-from ..opportunity import KindnessOpportunity
+from opportunity import KindnessOpportunity
 from kindness_model.context import Context, Location
 from kindness_model.conditions import Condition
 from kindness_model.actors import Actor, ActorRole
