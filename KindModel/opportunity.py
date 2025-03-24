@@ -8,12 +8,12 @@ actors, context, properties, relations, and potential kindness acts.
 from dataclasses import dataclass, field
 from typing import List
 
-from kindness_model.conditions import Condition
-from kindness_model.context import Context
-from kindness_model.actors import Actor
-from kindness_model.acts import KindnessAct
-from kindness_model.properties import Property
-from kindness_model.relations import Relation
+from KindModel.kindness_model.conditions import Condition
+from KindModel.kindness_model.context import Context
+from KindModel.kindness_model.actors import Actor
+from KindModel.kindness_model.acts import KindnessAct
+from KindModel.kindness_model.properties import Property
+from KindModel.kindness_model.relations import Relation
 
 
 @dataclass

@@ -1,7 +1,7 @@
 # main.py
 
-from overcooked_env import OvercookedParallelEnv
-from kindness import create_overcooked_kindness_opportunity
+from KindModel.overcooked_marl.overcooked_env import OvercookedParallelEnv
+from KindModel.overcooked_marl.kindness import create_overcooked_kindness_opportunity
 
 import numpy as np
 import random

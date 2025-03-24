@@ -19,7 +19,7 @@ class OvercookedParallelEnv(ParallelEnv):
         self.max_steps = max_steps
         self.agents = ["chef_0", "chef_1"]
         self.possible_agents = self.agents
-        self.num_agents = len(self.agents)
+        #self.num_agents = len(self.agents)
 
         # Example discrete actions:
         # 0: Move Left

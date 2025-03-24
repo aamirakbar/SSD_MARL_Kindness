@@ -1,14 +1,14 @@
 # kindness.py
 
 from datetime import datetime
-from opportunity import KindnessOpportunity
-from kindness_model.context import Context, Location
-from kindness_model.conditions import Condition
-from kindness_model.actors import Actor, ActorRole
-from kindness_model.acts import SupportingAct, PromptAct
-from kindness_model.motivations import Motivation, MotivationType
-from kindness_model.properties import Property
-from kindness_model.relations import Relation
+from KindModel.opportunity import KindnessOpportunity
+from KindModel.kindness_model.context import Context, Location
+from KindModel.kindness_model.conditions import Condition
+from KindModel.kindness_model.actors import Actor, ActorRole
+from KindModel.kindness_model.acts import SupportingAct, PromptAct
+from KindModel.kindness_model.motivations import Motivation, MotivationType
+from KindModel.kindness_model.properties import Property
+from KindModel.kindness_model.relations import Relation
 
 
 def create_overcooked_kindness_opportunity():
@@ -28,12 +28,12 @@ def create_overcooked_kindness_opportunity():
     chef0 = Actor(
         name="Chef0",
         roles=[ActorRole.GIVER, ActorRole.RECEIVER],
-        motivation=Motivation(motivation_type=MotivationType.BETTERMENT_FOCUSED, level=0.8)
+        motivation=Motivation(motivation_type=MotivationType.OTHER_BETTERMENT_FOCUSED, level=0.8)
     )
     chef1 = Actor(
         name="Chef1",
         roles=[ActorRole.GIVER, ActorRole.RECEIVER],
-        motivation=Motivation(motivation_type=MotivationType.BETTERMENT_FOCUSED, level=0.7)
+        motivation=Motivation(motivation_type=MotivationType.OTHER_BETTERMENT_FOCUSED, level=0.7)
     )
 
     # A property might be "Shared Ingredient" or "Dish"
