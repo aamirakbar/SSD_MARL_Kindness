@@ -39,7 +39,8 @@ RUN git clone https://github.com/aamirakbar/SSD_MARL_Kindness.git
 ENV PYTHONPATH=/app/SSD_MARL_Kindness
 
 # Expose Jupyter Lab port
-EXPOSE 8888
+#EXPOSE 8888
 
 # Default command to start Jupyter Lab
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+#CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+CMD ["/bin/bash"]

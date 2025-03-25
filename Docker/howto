@@ -9,5 +9,7 @@ sudo docker run -it --rm \
   
   
   sudo docker run -it --rm \
-  -p 8888:8888 \
+  -v /home/Aamir/kindssd/github/KindModel:/app/KindModel \
   kindssd
+  
+  root@76c4548a92e5:/app# python -m KindModel.overcooked_marl.main
