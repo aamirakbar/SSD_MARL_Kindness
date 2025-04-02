@@ -10,7 +10,9 @@ from dataclasses import dataclass
 @dataclass
 class Condition:
     """
-    Represents a condition or precondition (e.g. "Needs volunteer presence",
-    "Requires permission from authority", etc.).
+    Represents a condition or precondition/postcondition with a name and a value.
+    The value refers to a specific formalization for representing the condition,
+    e.g., Bigraphical Reactive Systems.
     """
-    description: str
+    name: str
+    value: str

@@ -49,6 +49,5 @@ class KindnessOpportunity:
     def check_conditions(self) -> bool:
         """
         Placeholder method to check if conditions are met.
-        In a real implementation, you'd have logic to evaluate each condition.
         """
-        return all(condition.description != "" for condition in self.conditions)
+        return all(condition.name != "" for condition in self.conditions)

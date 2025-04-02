@@ -18,13 +18,14 @@ def create_overcooked_kindness_opportunity():
     """
 
     # Conditions might include "Dishes can burn if not attended"
-    cond_burning = Condition(description="Dish can burn if left unattended.")
+    pre_cond_burning = Condition(name="Dish can burn or ruined if left unattended or ingredients not added at right time.", value="True")
+    post_cond_burning = Condition(name="Dish is burnt, ruined or saved", value="True")
 
     # Context might be the 'Overcooked Kitchen'
     kitchen_loc = Location(name="Overcooked Kitchen")
     ctx = Context(locations=[kitchen_loc], times=[datetime.now()])
 
-    # Actors: Chef0 (giver) and Chef1 (receiver), or both as potential givers
+    # Actors: Chef0 and Chef1 - both as potential givers and receivers
     chef0 = Actor(
         name="Chef0",
         roles=[ActorRole.GIVER, ActorRole.RECEIVER],
@@ -37,7 +38,7 @@ def create_overcooked_kindness_opportunity():
     )
 
     # A property might be "Shared Ingredient" or "Dish"
-    dish_property = Property(name="SharedDish", value="TomatoSoup")
+    Ing_property = Property(name="SharedIngredent", value="Spice")
 
     # A relation might be "Co-Chefs"
     rel = Relation(description="Co-chefs in the same kitchen")
@@ -49,10 +50,10 @@ def create_overcooked_kindness_opportunity():
     prompt_burn_act = PromptAct(prompt="Dish is burning! Please attend it.")
 
     opportunity = KindnessOpportunity(
-        conditions=[cond_burning],
+        conditions=[pre_cond_burning, post_cond_burning],
         context=ctx,
         actors=[chef0, chef1],
-        properties=[dish_property],
+        properties=[Ing_property],
         relations=[rel],
         possible_acts=[share_ingredient_act, prompt_burn_act]
     )

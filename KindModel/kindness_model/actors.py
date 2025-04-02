@@ -37,3 +37,9 @@ class Actor:
     def add_role(self, role: ActorRole) -> None:
         if role not in self.roles:
             self.roles.append(role)
+
+    def change_motivation(self, motivation: Motivation) -> None:
+        """
+        Updates the motivation of the actor.
+        """
+        self.motivation = motivation

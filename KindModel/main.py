@@ -1,19 +1,19 @@
 # main.py
 from datetime import datetime
 
-from kindness_model.acts import AbilityAct, PromptAct
-from kindness_model.actors import Actor, ActorRole
-from kindness_model.context import Context, Location
-from kindness_model.conditions import Condition
-from kindness_model.motivations import Motivation, MotivationType
-from opportunity import KindnessOpportunity
-from kindness_model.properties import Property
-from kindness_model.relations import Relation
+from KindModel.kindness_model.acts import AbilityAct, PromptAct
+from KindModel.kindness_model.actors import Actor, ActorRole
+from KindModel.kindness_model.context import Context, Location
+from KindModel.kindness_model.conditions import Condition
+from KindModel.kindness_model.motivations import Motivation, MotivationType
+from KindModel.opportunity import KindnessOpportunity
+from KindModel.kindness_model.properties import Property
+from KindModel.kindness_model.relations import Relation
 
 def main():
     # Create some conditions
-    cond1 = Condition(description="Requires volunteer presence")
-    cond2 = Condition(description="Needs approval from manager")
+    pre = Condition(name="VolunteerPresence", value="True")
+    post = Condition(name="ManagerApproval", value="False")
 
     # Create a context
     loc = Location(name="Community Center")
@@ -43,7 +43,7 @@ def main():
 
     # Create the opportunity
     opportunity = KindnessOpportunity(
-        conditions=[cond1, cond2],
+        conditions=[pre, post],
         context=ctx,
         actors=[giver, receiver],
         properties=[prop_donation],
@@ -51,14 +51,9 @@ def main():
         possible_acts=[act1, act2]
     )
 
-    # Check if conditions are met
-    if opportunity.check_conditions():
-        print("All conditions are met. Proceed with kindness acts!")
-        # Perform the acts
-        for act in opportunity.possible_acts:
-            act.perform_act()
-    else:
-        print("Some conditions are not met. Cannot proceed.")
+    # Perform the acts
+    for act in opportunity.possible_acts:
+        act.perform_act()
 
 if __name__ == "__main__":
     main()
